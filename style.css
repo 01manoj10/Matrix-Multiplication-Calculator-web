@@ -1,0 +1,41 @@
+
+
+input[type="text"] {
+    width: 50px;
+}
+
+div {
+    width: max-content;
+    overflow-y: auto;
+
+}
+
+#calcButton {
+    visibility: hidden;
+    padding: 5px 15px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#calcButton:hover {
+    background-color: #45a049;
+
+}
+
+.matrixInputs {
+    padding: 10px 0;
+} */
+input[type="text"] {
+    width: 50px;
+}
+
+div {
+    width: max-content;
+    overflow-y: auto;
+
+}

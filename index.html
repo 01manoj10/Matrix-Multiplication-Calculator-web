@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix Multiplication Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Matrix Multiplication Calculator</h1>
+    <div class="matrixInputs">
+        <label for="matrixARows"><b>Matrix A dimensions:</b></label>
+        <button onclick="decreaseValue('matrixARows')">-</button>
+        <input type="text" onKeyUp="updateRows()" id="matrixARows" min="3" max="50">
+        <button onclick="increaseValue('matrixARows')">+</button>
+        x
+        <button onclick="decreaseValue('matrixAColumns')">-</button>
+        <input type="text" onKeyUp="updateRows()" id="matrixAColumns" min="3" max="50">
+        <button onclick="increaseValue('matrixAColumns')">+</button>
+    </div>
+    
+    <div class="matrixInputs">
+        <label for="matrixBColumns"><b>Matrix B dimensions:</b></label>
+        <button onclick="decreaseValue('matrixBRows')">-</button>
+        <input type="text" id="matrixBRows" disabled>
+        <button onclick="increaseValue('matrixBRows')">+</button>
+        x
+        <button onclick="decreaseValue('matrixBColumns')">-</button>
+        <input type="text" onKeyUp="updateRows()" id="matrixBColumns" min="3" max="50">
+        <button onclick="increaseValue('matrixBColumns')">+</button>
+    </div>
+    
+    <div id="matrixAContainer"></div>
+    <div id="matrixBContainer"></div>
+    
+    <button onClick="calculateMatrix()" id="calcButton">Calculate</button>
+    
+    <div id="results"></div>
+
+    <script>
+        function decreaseValue(id) {
+            var input = document.getElementById(id);
+            var value = parseInt(input.value, 10);
+            if (!isNaN(value) && value > input.min) {
+                input.value = value - 1;
+                updateRows();
+            }
+        }
+
+        function increaseValue(id) {
+            var input = document.getElementById(id);
+            var value = parseInt(input.value, 10);
+            if (!isNaN(value) && value < input.max) {
+                input.value = value + 1;
+                updateRows();
+            }
+        }
+    </script>
+</body>
+</html>
